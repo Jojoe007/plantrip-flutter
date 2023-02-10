@@ -9,13 +9,13 @@ class SearchPanel extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
       child: Column(children: [
-        Text(
-          "ค้นหาที่เที่ยวดีกว่าค้นหาความรักที่มักจะหาไม่เจอ",
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        // Text(
+        //   "ค้นหาที่เที่ยวดีกว่าค้นหาความรักที่มักจะหาไม่เจอ",
+        //   style: TextStyle(
+        //     fontSize: 16,
+        //     fontWeight: FontWeight.bold,
+        //   ),
+        // ),
         SearchField(),
       ]),
     );

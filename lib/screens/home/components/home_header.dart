@@ -10,7 +10,7 @@ class HomeHeader extends StatelessWidget {
     return Container(
         // height: 132,
         padding: EdgeInsets.symmetric(horizontal: 16),
-        color: Colors.grey[400],
+        color: Colors.grey[300],
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

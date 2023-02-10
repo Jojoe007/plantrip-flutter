@@ -10,7 +10,7 @@ class SearchField extends StatelessWidget {
     return Container(
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.grey,
+        color: Colors.grey[300],
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextField(

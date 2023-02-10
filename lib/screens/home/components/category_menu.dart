@@ -7,21 +7,19 @@ class CategoryMenu extends StatefulWidget {
 
 class _GategoryMenuState extends State<CategoryMenu>
     with TickerProviderStateMixin {
-  late ScrollController _scrollController;
+  late double screenWidth, screenHeight;
 
-  double value = 100;
-  Color colorValue = Colors.lightBlue;
+  late ScrollController _scrollController;
+  late double _position = 0;
+
+  late int _countMenu;
 
   @override
   void initState() {
     _scrollController = ScrollController();
+    _countMenu = 8;
 
-    // _scrollController.addListener(() {
-    //   print(_scrollController.offset);
-    //   setState(() {
-    //     value = _scrollController.offset - 300;
-    //   });
-    // });
+    _scrollController.addListener(_onScrollListener);
 
     super.initState();
   }
@@ -33,8 +31,20 @@ class _GategoryMenuState extends State<CategoryMenu>
     super.dispose();
   }
 
+  void _onScrollListener() {
+    setState(() {
+      _position = (_scrollController.offset /
+              (_scrollController.position.maxScrollExtent / 100)) /
+          2;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    screenHeight = size.height;
+    screenWidth = size.width;
+
     return Column(
       children: [
         SingleChildScrollView(
@@ -42,19 +52,35 @@ class _GategoryMenuState extends State<CategoryMenu>
           scrollDirection: Axis.horizontal,
           child: Row(children: [
             ...List.generate(
-              10,
+              _countMenu,
               (index) {
                 return _buildMenuIcon("ร้านอาหาร");
               },
             ),
           ]),
         ),
-        SizedBox(
-          width: 100,
-          child: LinearProgressIndicator(
-            value: value,
-            color: colorValue,
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(50),
+          child: Container(
+            color: Colors.grey[300],
+            width: 100,
+            height: 6,
+            child: Stack(
+              children: [
+                Positioned(
+                  left: _position,
+                  top: 0,
+                  bottom: 0,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.lightBlue,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    width: (_countMenu <= 5) ? 100 : 50,
+                  ),
+                ),
+              ],
+            ),
           ),
         )
       ],
@@ -63,11 +89,11 @@ class _GategoryMenuState extends State<CategoryMenu>
 
   Widget _buildMenuIcon(final String title) {
     return Padding(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: Container(
         width: 54,
         height: 68,
-        color: Colors.white,
+        // color: Colors.white,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,

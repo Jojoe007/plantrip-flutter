@@ -20,17 +20,17 @@ class HomeBody extends StatelessWidget {
         top: false,
         child: Column(
           children: [
-            HomeHeader(),
+            const HomeHeader(),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
-                    SuggestAttraction(),
+                    const SuggestAttraction(),
                     CategoryMenu(),
                     const SizedBox(
                       height: 20,
                     ),
-                    NearMeAttraction(),
+                    const NearMeAttraction(),
                     const SizedBox(
                       height: 20,
                     ),
