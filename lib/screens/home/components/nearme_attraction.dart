@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plantrip/components/nearme_attraction_card.dart';
-import 'package:plantrip/components/province_attraction_card.dart';
-import 'package:plantrip/models/Province.dart';
 import 'package:plantrip/screens/home/components/section_title.dart';
 import 'package:plantrip/test.dart';
 
@@ -17,7 +15,7 @@ class NearMeAttraction extends StatelessWidget {
           child: SectionTitle(
             title: 'Near Me',
             seeMore: true,
-            onPress: () {}, //TODO: New Screen to Suggest Full Screen
+            onPress: () {}, //TODO: New Screen to NearMe Full Screen
           ),
         ),
         const SizedBox(

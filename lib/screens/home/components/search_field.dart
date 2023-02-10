@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:plantrip/screens/search/search_screen.dart';
@@ -18,9 +19,8 @@ class SearchField extends StatelessWidget {
           Navigator.pushNamed(context, SearchScreen.routeName);
         },
         cursorColor: Colors.black,
+        showCursor: false,
         decoration: const InputDecoration(
-            contentPadding: EdgeInsets.all(10),
-            isDense: true,
             border: InputBorder.none,
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,

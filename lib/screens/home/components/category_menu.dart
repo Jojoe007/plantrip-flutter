@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:plantrip/models/AttractionCategory.dart';
+import 'package:plantrip/test.dart';
 
 class CategoryMenu extends StatefulWidget {
   @override
@@ -17,7 +19,7 @@ class _GategoryMenuState extends State<CategoryMenu>
   @override
   void initState() {
     _scrollController = ScrollController();
-    _countMenu = 8;
+    _countMenu = TESTDATA.ATT_CATEGORIES.length;
 
     _scrollController.addListener(_onScrollListener);
 
@@ -54,7 +56,7 @@ class _GategoryMenuState extends State<CategoryMenu>
             ...List.generate(
               _countMenu,
               (index) {
-                return _buildMenuIcon("ร้านอาหาร");
+                return _buildMenuIcon(TESTDATA.ATT_CATEGORIES.elementAt(index));
               },
             ),
           ]),
@@ -64,7 +66,7 @@ class _GategoryMenuState extends State<CategoryMenu>
           child: Container(
             color: Colors.grey[300],
             width: 100,
-            height: 6,
+            height: 4,
             child: Stack(
               children: [
                 Positioned(
@@ -87,12 +89,12 @@ class _GategoryMenuState extends State<CategoryMenu>
     );
   }
 
-  Widget _buildMenuIcon(final String title) {
+  Widget _buildMenuIcon(final AttractionCategory attractionCategory) {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Container(
         width: 54,
-        height: 68,
+        height: 74,
         // color: Colors.white,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -102,13 +104,15 @@ class _GategoryMenuState extends State<CategoryMenu>
                 'assets/icons/png/home_active.png',
                 width: 44,
               ),
-              SizedBox(
-                height: 4,
+              const SizedBox(
+                height: 8,
               ),
               Text(
-                title,
-                style: TextStyle(fontSize: 11),
-                maxLines: 1,
+                attractionCategory.title,
+                softWrap: true,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.labelSmall,
+                maxLines: 2,
               )
             ]),
       ),

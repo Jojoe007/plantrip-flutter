@@ -20,14 +20,7 @@ class SectionTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 18,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          Text(title, style: Theme.of(context).textTheme.titleLarge),
           (!seeMore)
               ? Container()
               : GestureDetector(

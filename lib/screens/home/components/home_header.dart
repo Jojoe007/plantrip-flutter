@@ -34,7 +34,7 @@ class HomeHeader extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text("แอพคุณภาพคู่ควรชาวไทย"),
+                  Text("แอพคุณภาพคู่ควรกับชาวไทย"),
                   Text("Made by Jojoe007")
                 ],
               ),
