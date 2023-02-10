@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:plantrip/models/Attraction.dart';
 
 class NearMeAttractionCard extends StatefulWidget {
@@ -16,6 +14,8 @@ class NearMeAttractionCard extends StatefulWidget {
 class _NearMeAttractionCardState extends State<NearMeAttractionCard> {
   @override
   Widget build(BuildContext context) {
+    TextTheme _textTheme = Theme.of(context).textTheme;
+
     return Padding(
       padding: EdgeInsets.only(left: 16),
       child: SizedBox(
@@ -37,15 +37,12 @@ class _NearMeAttractionCardState extends State<NearMeAttractionCard> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 4,
-                ),
+                // SizedBox(height: 2),
                 Text(
                   widget.attraction.title,
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
+                  style: _textTheme.titleSmall,
+                  softWrap: true,
+                  overflow: TextOverflow.fade,
                   maxLines: 1,
                 ),
                 Row(
@@ -53,11 +50,7 @@ class _NearMeAttractionCardState extends State<NearMeAttractionCard> {
                   children: [
                     Text(
                       "range km.",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w200,
-                        // color: kPrimaryColor,
-                      ),
+                      style: _textTheme.bodySmall,
                     ),
                   ],
                 )

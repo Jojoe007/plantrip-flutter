@@ -10,6 +10,8 @@ class SuggestAttractionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme _textTheme = Theme.of(context).textTheme;
+
     return Padding(
       padding: EdgeInsets.only(left: 16),
       child: SizedBox(
@@ -30,15 +32,11 @@ class SuggestAttractionCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
                 Text(
                   attraction.title,
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
+                  style: _textTheme.titleMedium,
+                  softWrap: true,
+                  overflow: TextOverflow.fade,
                   maxLines: 1,
                 ),
                 Row(
@@ -46,13 +44,9 @@ class SuggestAttractionCard extends StatelessWidget {
                   children: [
                     Text(
                       attraction.des,
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w200,
-                        // color: kPrimaryColor,
-                      ),
+                      style: _textTheme.bodySmall,
                     ),
-                    Text("get range"),
+                    Text("rating : ${"12"}", style: _textTheme.bodySmall),
                   ],
                 )
               ],
