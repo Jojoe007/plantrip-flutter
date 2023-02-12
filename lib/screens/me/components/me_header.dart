@@ -19,7 +19,7 @@ class MeHeader extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "username or id",
+                    "jojoe007",
                     maxLines: 1,
                     style: TextStyle(
                       fontSize: 22,

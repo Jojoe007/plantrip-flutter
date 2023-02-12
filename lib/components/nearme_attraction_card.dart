@@ -30,11 +30,8 @@ class _NearMeAttractionCardState extends State<NearMeAttractionCard> {
                   borderRadius: BorderRadius.circular(10),
                   child: AspectRatio(
                     aspectRatio: 4 / 4,
-                    child: Hero(
-                      tag: widget.attraction.id.toString(),
-                      child: Image.network(widget.attraction.image,
-                          width: 150, fit: BoxFit.cover),
-                    ),
+                    child: Image.network(widget.attraction.image,
+                        width: 150, fit: BoxFit.cover),
                   ),
                 ),
                 // SizedBox(height: 2),

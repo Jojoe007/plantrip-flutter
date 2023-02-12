@@ -6,74 +6,116 @@ ThemeData defualtTheme() {
     primaryColor: Colors.lightGreen,
     fontFamily: 'Anuphan',
     textTheme: const TextTheme(
-        displayLarge: TextStyle(fontSize: 57, fontWeight: FontWeight.bold),
-        displayMedium: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
-        displaySmall: TextStyle(
-          color: Colors.black,
-          fontSize: 36,
-          fontWeight: FontWeight.w700,
-        ),
-        // Title
-        titleLarge: TextStyle(
-          fontSize: 22,
-          wordSpacing: 1.6,
-          letterSpacing: 0,
-          fontWeight: FontWeight.w600,
-        ),
-        titleMedium: TextStyle(
-          fontSize: 16,
-          wordSpacing: 1.6,
-          letterSpacing: 0.15,
-          fontWeight: FontWeight.w600,
-          height: 1.4,
-        ),
-        titleSmall: TextStyle(
-          fontSize: 14,
-          wordSpacing: 1.6,
-          letterSpacing: 0.1,
-          fontWeight: FontWeight.w600,
-          // height: 1,
-        ),
-        //Lebel
+      displayLarge: TextStyle(
+        fontSize: 57,
+        wordSpacing: 1.6,
+        letterSpacing: 0,
+        fontWeight: FontWeight.bold,
+        height: 1.6,
+      ),
+      displayMedium: TextStyle(
+        fontSize: 45,
+        wordSpacing: 1.6,
+        letterSpacing: 0,
+        fontWeight: FontWeight.bold,
+        height: 1.4,
+      ),
+      displaySmall: TextStyle(
+        color: Colors.black,
+        fontSize: 36,
+        wordSpacing: 1.6,
+        letterSpacing: 0,
+        fontWeight: FontWeight.bold,
+        height: 1.2,
+      ),
+      // Headline
+      headlineLarge: TextStyle(
+        fontSize: 32,
+        wordSpacing: 1.6,
+        letterSpacing: 0,
+        fontWeight: FontWeight.w400,
+      ),
+      headlineMedium: TextStyle(
+        fontSize: 28,
+        wordSpacing: 1.6,
+        letterSpacing: 0,
+        fontWeight: FontWeight.w400,
+        height: 1.4,
+      ),
+      headlineSmall: TextStyle(
+        fontSize: 24,
+        wordSpacing: 1.6,
+        letterSpacing: 0,
+        fontWeight: FontWeight.w400,
+        // height: 1,
+      ),
+      // Title
+      titleLarge: TextStyle(
+        fontSize: 22,
+        wordSpacing: 1.6,
+        letterSpacing: 0,
+        fontWeight: FontWeight.w600,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 16,
+        wordSpacing: 1.6,
+        letterSpacing: 0.15,
+        fontWeight: FontWeight.w600,
+        height: 1.4,
+      ),
+      titleSmall: TextStyle(
+        fontSize: 14,
+        wordSpacing: 1.6,
+        letterSpacing: 0.1,
+        fontWeight: FontWeight.w600,
+        // height: 1,
+      ),
+      //Lebel
 
-        labelLarge: TextStyle(
-          fontSize: 14,
-          wordSpacing: 1.6,
-          letterSpacing: 0.1,
-          fontWeight: FontWeight.w500,
-          height: 1.4,
-        ),
-        labelMedium: TextStyle(
-          fontSize: 12,
-          wordSpacing: 1.6,
-          letterSpacing: 0.5,
-          fontWeight: FontWeight.w500,
-          height: 1.2,
-        ),
-        labelSmall: TextStyle(
-          fontSize: 11,
-          wordSpacing: 1.6,
-          letterSpacing: 0.4,
-          fontWeight: FontWeight.w500,
-          height: 1,
-        ),
+      labelLarge: TextStyle(
+        color: Colors.black,
+        fontSize: 14,
+        wordSpacing: 1.6,
+        letterSpacing: 0.1,
+        fontWeight: FontWeight.w500,
+        height: 1.4,
+      ),
+      labelMedium: TextStyle(
+        color: Colors.black,
+        fontSize: 12,
+        wordSpacing: 1.6,
+        letterSpacing: 0.5,
+        fontWeight: FontWeight.w500,
+        height: 1.2,
+      ),
+      labelSmall: TextStyle(
+        color: Colors.black,
+        fontSize: 11,
+        wordSpacing: 1.6,
+        letterSpacing: 0.4,
+        fontWeight: FontWeight.w500,
+        height: 1,
+      ),
 
-        // Body
-        bodyLarge: TextStyle(
-          color: Colors.black,
-          fontSize: 16.0,
-        ),
-        bodyMedium: TextStyle(
-          color: Colors.black,
-          fontSize: 14.0,
-        ),
-        bodySmall: TextStyle(
-            color: Colors.black,
-            fontSize: 12,
-            wordSpacing: 1.6,
-            letterSpacing: 0.4,
-            fontWeight: FontWeight.w300,
-            overflow: TextOverflow.clip)),
+      // Body
+      bodyLarge: TextStyle(
+        color: Colors.black,
+        fontSize: 16.0,
+      ),
+      bodyMedium: TextStyle(
+        color: Colors.black,
+        fontSize: 14.0,
+      ),
+      bodySmall: TextStyle(
+        color: Colors.black,
+        fontSize: 12,
+        wordSpacing: 1.6,
+        letterSpacing: 0.4,
+        fontWeight: FontWeight.w300,
+        overflow: TextOverflow.clip,
+      ),
+    ),
+    buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.accent),
   );
 }
 

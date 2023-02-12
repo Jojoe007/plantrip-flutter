@@ -9,7 +9,7 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
+      // height: 40,
       decoration: BoxDecoration(
         color: Colors.grey[300],
         borderRadius: BorderRadius.circular(10),
@@ -18,17 +18,18 @@ class SearchField extends StatelessWidget {
         onTap: () {
           Navigator.pushNamed(context, SearchScreen.routeName);
         },
-        cursorColor: Colors.black,
         showCursor: false,
         decoration: const InputDecoration(
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            hintText: "Search Attraction",
-            prefixIcon: Icon(
-              Ionicons.search,
-              color: Colors.black,
-            )),
+          border: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          hintText: "Search Attraction",
+          hintStyle: TextStyle(height: 0),
+          prefixIcon: Icon(
+            Ionicons.search,
+            color: Colors.black,
+          ),
+        ),
       ),
     );
   }

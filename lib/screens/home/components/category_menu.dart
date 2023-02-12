@@ -3,23 +3,25 @@ import 'package:plantrip/models/AttractionCategory.dart';
 import 'package:plantrip/test.dart';
 
 class CategoryMenu extends StatefulWidget {
+  const CategoryMenu({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _GategoryMenuState();
 }
 
 class _GategoryMenuState extends State<CategoryMenu>
     with TickerProviderStateMixin {
-  late double screenWidth, screenHeight;
-
   late ScrollController _scrollController;
   late double _position = 0;
 
-  late int _countMenu;
+  late int _categoryCount;
+
+  //TODO : Get data attraction category
 
   @override
   void initState() {
     _scrollController = ScrollController();
-    _countMenu = TESTDATA.ATT_CATEGORIES.length;
+    _categoryCount = TESTDATA.ATT_CATEGORIES.length;
 
     _scrollController.addListener(_onScrollListener);
 
@@ -41,12 +43,9 @@ class _GategoryMenuState extends State<CategoryMenu>
     });
   }
 
+  // Build Widget
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    screenHeight = size.height;
-    screenWidth = size.width;
-
     return Column(
       children: [
         SingleChildScrollView(
@@ -54,7 +53,7 @@ class _GategoryMenuState extends State<CategoryMenu>
           scrollDirection: Axis.horizontal,
           child: Row(children: [
             ...List.generate(
-              _countMenu,
+              _categoryCount,
               (index) {
                 return _buildMenuIcon(TESTDATA.ATT_CATEGORIES.elementAt(index));
               },
@@ -78,7 +77,7 @@ class _GategoryMenuState extends State<CategoryMenu>
                       color: Colors.lightBlue,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    width: (_countMenu <= 5) ? 100 : 50,
+                    width: (_categoryCount <= 5) ? 100 : 50,
                   ),
                 ),
               ],

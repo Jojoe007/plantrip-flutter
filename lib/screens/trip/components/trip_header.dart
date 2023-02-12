@@ -48,30 +48,39 @@ class TripHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       color: Colors.grey[300],
       child: SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Trip Manager"),
-                  Text(
-                    "Go to ?",
-                    style: Theme.of(context).textTheme.displaySmall,
-                  ),
-                ],
-              )
-            ],
-          ),
-          _inputField(),
-        ],
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Trip Manager",
+                      style: theme.textTheme.labelLarge,
+                    ),
+                    Text(
+                      "Goto ?",
+                      style: theme.textTheme.displaySmall,
+                    ),
+                  ],
+                )
+              ],
+            ),
+            _inputField(),
+            const SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

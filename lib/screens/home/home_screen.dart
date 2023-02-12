@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:plantrip/utils/size_utils.dart';
 
 import 'components/home_body.dart';
 
@@ -10,7 +9,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeUtils().init(context);
     return const Scaffold(
       body: HomeBody(),
     );

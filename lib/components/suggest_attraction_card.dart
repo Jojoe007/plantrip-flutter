@@ -25,11 +25,8 @@ class SuggestAttractionCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   child: AspectRatio(
                     aspectRatio: 1.6,
-                    child: Hero(
-                      tag: attraction.id.toString(),
-                      child: Image.network(attraction.image,
-                          width: 200, fit: BoxFit.cover),
-                    ),
+                    child: Image.network(attraction.image,
+                        width: 200, fit: BoxFit.cover),
                   ),
                 ),
                 Text(
